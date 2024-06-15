@@ -8,21 +8,21 @@
 .container {
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    background: linear-gradient(135deg, #0f0c29, #373362, #8989c1);
     padding: 10px;
 }
 
 .todo-app{
     width: 70%;
     max-width:540px;
-    background: #6975b6;
+    background:linear-gradient(135deg, #8989c1, #555179, #8989c1);
     margin: 100px auto 20px auto;
     padding: 40px 30px 70px 30px;
     border-radius: 10px;
 }
 
 .todo-app h2{
-    color: rgb(221, 220, 220);
+    color: rgb(29, 9, 66);
     display: flex;
     align-items: center;
     margin-bottom: 20px;
@@ -35,31 +35,59 @@
     margin-left: 10px;
 }
 
-.row{
-    display: flex ;
-    align-content: center;
+
+
+.row {
+    display: flex;
+    align-items: center;
     justify-content: space-between;
-    background: whitesmoke ;
+    background: transparent;
+    padding-left: 10px ; 
+    margin-bottom: 20px;
     border-radius: 30px;
-    padding-left: 20px;
-    margin-bottom: 25px;
+    position: relative;
 }
-input{
-    flex:1;
+
+.input-box,.date-box {
+    flex: 1; 
+    width: 100%;
+    height: 100%; 
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+
+.input-box input,.date-box input {
+    width: 100%; 
+    height: 100%; 
     border: none;
     outline: none;
-    background: transparent;
-    padding: 10px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-left: 10px;
 }
+
+.input-box input {
+    background: whitesmoke; 
+}
+
+.date-box input {
+    background: rgb(87, 80, 136); 
+    color: whitesmoke;
+}
+
 button{
     border: none;
     outline: none;
-    padding: 16px 50px;
+    padding: 10px 20px ;
     background-color: #1B1A55;
     color: #fff;
     font-size: 16px;
     cursor: pointer;
-    border-radius: 40px;
+    padding-bottom: 19px;
+    padding-top: 20px;
+
 
 }
 

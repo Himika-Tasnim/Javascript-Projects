@@ -1,4 +1,5 @@
 const inputBox= document.getElementById("input-box");
+const dateBox= document.getElementById("date-box");
 const listContainer= document.getElementById("list-container");
 
 function addTask(){
@@ -7,13 +8,14 @@ function addTask(){
     }
     else{
         let elem = document.createElement("li");
-        elem.innerHTML=inputBox.value;
+        elem.innerHTML=inputBox.value + " (" + dateBox.value+ ")";
         listContainer.appendChild(elem);
         let span= document.createElement("span");
         span.innerHTML="\u00d7";
         elem.appendChild(span);
     }
     inputBox.value="";
+    dateBox.value="";
     saveData();
 }
 
