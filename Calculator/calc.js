@@ -51,6 +51,65 @@ function turnOn() {
 
 }
 
+function turnOn() {
+    const buttons = document.getElementsByClassName("btn");
+    const key = document.getElementById("on");
+
+    if (s === 0) {
+        // Calculator is off, turn it on
+        s = 1;
+        key.innerText= "OFF";
+        key.style.padding = "10px"
+        key.style.backgroundColor="rgb(225, 18, 18)"
+        Array.from(buttons).forEach(element => {
+            if (element.classList.contains('equal-sign')) {
+                element.style.backgroundColor = "rgb(26, 145, 69)";
+            } else {
+                element.style.backgroundColor = "rgb(203, 198, 198)";
+            }
+
+            // Add event listener for mouseover only when calculator is on
+            element.addEventListener('mouseover', mouseOverHandler);
+
+            // Add event listener for mouseout only when calculator is on
+            element.addEventListener('mouseout', mouseOutHandler);
+        });
+    } else {
+        // Calculator is on, turn it off
+        s=0
+        key.innerText= "ON"
+        key.style.padding = "20px"
+        key.style.backgroundColor="rgb(26, 145, 69)"
+        Array.from(buttons).forEach(element => {
+            element.style.backgroundColor = "rgb(118, 116, 116)";
+
+            // Remove event listener for mouseover when calculator is off
+            element.removeEventListener('mouseover', mouseOverHandler);
+
+            // Remove event listener for mouseout when calculator is off
+            element.removeEventListener('mouseout', mouseOutHandler);
+        });
+    }
+}
+
+// Mouseover event handler
+function mouseOverHandler() {
+    if (this.classList.contains('equal-sign')) {
+        this.style.backgroundColor = "green";
+    } else {
+        this.style.backgroundColor = "rgb(157, 157, 157)";
+    }
+}
+
+// Mouseout event handler
+function mouseOutHandler() {
+    if (this.classList.contains('equal-sign')) {
+        this.style.backgroundColor = "rgb(26, 145, 69)";
+    } else {
+        this.style.backgroundColor = "rgb(203, 198, 198)";
+    }
+}
+
 
 
 
